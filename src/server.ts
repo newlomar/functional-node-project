@@ -3,9 +3,17 @@ const app = express();
 
 app.use(express.json());
 
-const users = [];
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
 
-app.get("/users", (request, response) => {});
+const users: USer[] = [];
+
+app.get("/users", (request, response) => {
+  return response.json(users);
+});
 
 app.post("/users", (request, response) => {});
 
