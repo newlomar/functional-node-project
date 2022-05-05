@@ -1,5 +1,5 @@
 import express from "express";
-import { v4 as uuid } from "uui";
+import { v4 as uuid } from "uuid";
 
 const app = express();
 
@@ -54,6 +54,8 @@ app.delete("/users/:id", (request, response) => {
   }
 
   users.splice(userIndex, 1);
+
+  return response.status(204).send();
 });
 
 app.listen("3333", () => {
